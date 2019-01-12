@@ -5,9 +5,10 @@
 
   const root = document.querySelector("#root");
   const input = root.children[0];
-  const out = root.children[1];
+  const sound = root.children[1];
+  const out = root.children[2];
 
-  const legend = await fetch("./legend.json").then(res => res.json());
+  const legend = await fetch("./js/legend.json").then(res => res.json());
   let morseCode = [];
 
   const typeChar = () => {
@@ -24,4 +25,10 @@
 
   typeChar();
   input.addEventListener("input", typeChar);
+
+  const playSound = () => {
+    console.log("play sound");
+  };
+
+  sound.addEventListener("click", playSound);
 })();

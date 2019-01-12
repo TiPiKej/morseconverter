@@ -19,10 +19,20 @@
   border-radius: 12px
   border: none
   font-size: 1.5em
- 
- .filled ~ #out
-  margin-top: 300px
+  width: 340px
+  max-width: 100vw
+
+ #sound
+  cursor: pointer
+  width: 50px
+  transition: all 220ms ease-in-out
+  background: black
+  height: 0
+ .filled ~ #buttons #sound
+  height: 50px
 
  #out
   transition: all 220ms ease-in-out
   font-weight: 700
+ .filled ~ #out
+  margin-top: 10vh

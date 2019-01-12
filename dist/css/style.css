@@ -20,13 +20,25 @@
   border-radius: 12px;
   border: none;
   font-size: 1.5em;
+  width: 340px;
+  max-width: 100vw;
 }
-#root .filled ~ #out {
-  margin-top: 300px;
+#root #sound {
+  cursor: pointer;
+  width: 50px;
+  transition: all 220ms ease-in-out;
+  background: black;
+  height: 0;
+}
+#root .filled ~ #buttons #sound {
+  height: 50px;
 }
 #root #out {
   transition: all 220ms ease-in-out;
   font-weight: 700;
+}
+#root .filled ~ #out {
+  margin-top: 10vh;
 }
 
 /*# sourceMappingURL=style.css.map */

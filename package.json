@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "start powershell sass --watch dist/style.sass dist/style.css",
+    "sass": "start powershell sass --watch dist/css/style.sass dist/css/style.css",
     "server": "cd dist && start powershell live-server",
     "editor": "code .",
     "start": "npm run sass && npm run server && npm run editor",
