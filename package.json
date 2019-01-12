@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "code . && cd dist && live-server",
+    "sass": "start powershell sass --watch dist/style.sass dist/style.css",
+    "server": "cd dist && start powershell live-server",
+    "editor": "code .",
+    "start": "npm run sass && npm run server && npm run editor",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
@@ -16,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "gh-pages": "^2.0.1",
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "sass": "^1.16.0"
   }
 }
