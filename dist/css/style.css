@@ -1,3 +1,11 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "fontello";
+  src: url("../font/fontello.eot?62044555");
+  src: url("../font/fontello.eot?62044555#iefix") format("embedded-opentype"), url("../font/fontello.woff2?62044555") format("woff2"), url("../font/fontello.woff?62044555") format("woff"), url("../font/fontello.ttf?62044555") format("truetype"), url("../font/fontello.svg?62044555#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -23,19 +31,41 @@
   width: 340px;
   max-width: 100vw;
 }
-#root #sound {
+#root #buttons {
+  display: flex;
+  flex-direction: row;
+  margin: 20px 0;
+}
+#root #screen, #root #sound {
   cursor: pointer;
   width: 50px;
   transition: all 220ms ease-in-out;
-  background: black;
   height: 0;
+  overflow: hidden;
+}
+#root #screen::before, #root #sound::before {
+  font-family: "fontello";
+  font-size: 2em;
+}
+#root #sound::before {
+  content: "";
 }
 #root .filled ~ #buttons #sound {
-  height: 50px;
+  height: 3em;
+}
+#root #screen {
+  display: none;
+}
+#root #screen::before {
+  content: "";
+}
+#root .filled ~ #buttons #screen {
+  height: 3em;
 }
 #root #out {
   transition: all 220ms ease-in-out;
   font-weight: 700;
+  font-size: 3em;
 }
 #root .filled ~ #out {
   margin-top: 10vh;
