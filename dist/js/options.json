@@ -1,0 +1,10 @@
+{
+  ".": {
+    "time": 170,
+    "src": "./../sounds/short.mp3"
+  },
+  "-": {
+    "time": 430,
+    "src": "./../sounds/long.mp3"
+  }
+}

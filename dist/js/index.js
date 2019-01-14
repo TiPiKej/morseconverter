@@ -10,6 +10,7 @@
   const out = root.children[2];
 
   const legend = await fetch("./js/legend.json").then(res => res.json());
+  const options = await fetch("./js/options.json").then(res => res.json());
   let morseCode = [];
   let playing = false;
 
@@ -42,17 +43,10 @@
       let sound;
       // console.log(morseCode[i]);
 
-      switch (morseCode[i]) {
-        case ".":
-          sound = new Audio("./../sounds/short.mp3");
-          sound.play();
-          signalBreak = 170;
-          break;
-        case "-":
-          sound = new Audio("./../sounds/long.mp3");
-          sound.play();
-          signalBreak = 430;
-          break;
+      if (morseCode[i] !== "PAUSE") {
+        sound = new Audio(options[morseCode[i]].src);
+        sound.play();
+        signalBreak = options[morseCode[i]].time;
       }
 
       if (morseCode.length <= ++i) return (playing = false);
